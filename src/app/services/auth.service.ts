@@ -13,4 +13,8 @@ export class AuthService {
     if (token) return true;
     else return false;
   }
+
+  public getUserId(): string {
+    return this.tokenStorageService.getUser().Id;
+  }
 }

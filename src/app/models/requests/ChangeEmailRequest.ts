@@ -1,7 +1,7 @@
 
-export class ChangeEmailRequest {
+export interface ChangeEmailRequest {
 
-    private oldEmail: string;
-    private newEmail: string;
+    oldEmail: string;
+    newEmail: string;
     
 }

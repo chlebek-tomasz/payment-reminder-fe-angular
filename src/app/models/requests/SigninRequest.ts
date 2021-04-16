@@ -1,7 +1,7 @@
 
-export class SigninRequest {
+export interface SigninRequest {
     
-    private email: string;
-    private password: string;
+    email: string;
+    password: string;
     
 }

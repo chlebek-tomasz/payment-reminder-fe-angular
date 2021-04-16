@@ -1,7 +1,7 @@
 
-export class ChangeUserDetailsRequest {
+export interface ChangeUserDetailsRequest {
 
-    private firstName: string;
-    private lastName: string;
+    firstName: string;
+    lastName: string;
     
 }

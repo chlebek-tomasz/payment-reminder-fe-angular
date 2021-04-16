@@ -1,12 +1,12 @@
 
-export class PaymentRequest {
+export interface PaymentRequest {
 
-    private title: string;
-    private recipient: string;
-    private recipientAccountNumber: string;
-    private periodicity: number;
-    private categoryId: string;
-    private dueTo: string;
-    private amount: number;
+    title: string;
+    recipient: string;
+    recipientAccountNumber: string;
+    periodicity: number;
+    categoryId: string;
+    dueTo: string;
+    amount: number;
     
 }

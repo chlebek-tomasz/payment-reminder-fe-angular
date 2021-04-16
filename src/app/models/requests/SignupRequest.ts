@@ -1,9 +1,9 @@
 
-export class SignupRequest {
+export interface SignupRequest {
 
-    private email: string;
-    private password: string;
-    private firstName: string;
-    private lastName: string;
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
 
 }

@@ -1,6 +1,6 @@
-export class ChangePasswordRequest {
+export interface ChangePasswordRequest {
     
-    private oldPassword: string;
-    private newPassword: string;
+    oldPassword: string;
+    newPassword: string;
     
 }

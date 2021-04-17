@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'payments', component: PaymentsListComponent },
-  { path: 'payments-history', component: PaymentsHistoryListComponent },
+  { path: 'payments-history', component: PaymentsListComponent },
   { path: 'user-profile', component: UserComponent },
 ];
 

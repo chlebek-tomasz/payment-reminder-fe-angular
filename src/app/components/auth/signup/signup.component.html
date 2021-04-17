@@ -3,7 +3,7 @@
         <mat-card-title>Zarejestruj się</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <form>
+        <form (keydown.enter)="onSubmit(model)">
             <mat-form-field>
                 <input  matInput  placeholder="Email" [(ngModel)]="model.email"  type="email" name="email"  required>
             </mat-form-field><br />

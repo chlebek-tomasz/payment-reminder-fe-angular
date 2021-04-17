@@ -1,5 +1,11 @@
 <div class="box justify-content-center border border-secondary rounded">
-        <p>Nadchodząca płatność</p>
-        <p>{{payment.Id}}</p>
-        <p>{{payment.Title}}</p>
+        <div class="ml-4 mt-2">
+                <h1><b>Nadchodząca płatność</b></h1>
+                <br/>
+                <p><b>Tytuł: </b>{{payment.Title}}</p>
+                <p><b>Odbiorca: </b>{{payment.Recipient}}</p>
+                <p><b>Nr konta odbiorcy: </b>{{payment.RecipientAccountNumber}}</p>
+                <p><b>Kwota: </b>{{payment.Amount}}</p>
+                <p><b>Termin płatności: </b>{{payment.DueTo}}</p>
+        </div>
 </div>

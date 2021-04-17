@@ -1,5 +1,5 @@
 
-export interface PaymentRequest {
+export class PaymentRequest {
 
     title: string;
     recipient: string;

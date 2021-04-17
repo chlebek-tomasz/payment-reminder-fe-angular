@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +21,8 @@ export class SignupComponent implements OnInit {
   constructor(private dialog: MatDialog,
               private signupService: SignupService,
               private tokenStorage: TokenStorageService,
-              private router: Router) { }
+              private router: Router,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
@@ -38,10 +40,17 @@ export class SignupComponent implements OnInit {
         this.dialog.closeAll();
         this.isSuccessful = true;
         this.dialog.open(LoginComponent);
+        this.snackBar.open('Account created successfully', 'Close', {
+          duration: 2000,
+          panelClass: ['success']
+        });
       },
       err => {
-        const json = JSON.parse(err.error);
         this.isSuccessful = false;
+        this.snackBar.open('Try again!', 'Close', {
+          duration: 2000,
+          panelClass: ['failure']
+        });
       }
     )
   }

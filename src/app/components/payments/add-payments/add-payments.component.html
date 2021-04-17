@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Dodaj płatność</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form (keydown.enter)="onSubmit(model)">
+            <mat-form-field>
+                <input  matInput  placeholder="Tytuł" [(ngModel)]="model.title"  type="text" name="text" required>
+            </mat-form-field><br/>
+            <mat-form-field>
+                <input  matInput  placeholder="Odbiorca" [(ngModel)]="model.recipient"  type="text"  name="text" required>
+            </mat-form-field><br/>
+            <mat-form-field>
+                <input  matInput  placeholder="Numer konta odbiorcy" [(ngModel)]="model.recipientAccountNumber"  type="text"  name="text" required>
+            </mat-form-field><br/>
+            <mat-form-field>
+                <input  matInput  placeholder="Okresowość płatności (dni)" [(ngModel)]="model.periodicity"  type="number"  name="number" required>
+            </mat-form-field><br/>
+            <mat-form-field>
+                <input  matInput  placeholder="Kategoria" [(ngModel)]="model.categoryId"  type="number"  name="number" required>
+            </mat-form-field><br/>
+            <mat-form-field>
+                <input  matInput  placeholder="Termin" [(ngModel)]="model.dueTo"  type="text"  name="text" required>
+            </mat-form-field><br/>
+            <mat-form-field>
+                <input  matInput  placeholder="Kwota" [(ngModel)]="model.amount"  type="number"  name="number" required>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button  mat-raised-button (click)="onSubmit(model)" color="primary">Dodaj</button>
+    </mat-card-actions>
+</mat-card>

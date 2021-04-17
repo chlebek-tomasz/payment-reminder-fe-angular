@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     if (!this.isLoggedIn) {
     this.model = new SigninRequest();
     } else {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/dashboard']);
     }
   }
 

@@ -74,11 +74,11 @@
                         <div class="label">
                             <div class="button-row">
                                 <div class="flex-container">
-                                    <div class="button-container">
+                                    <div class="button-container-2">
                                         <button mat-fab color="primary" [matMenuTriggerFor]="menu" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
                                             <span class="mat-button-wrapper">
                                                 <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font" [routerLink]="['/dashboard']">filter_list</mat-icon>
+                                                    aria-hidden="true" data-mat-icon-type="font">filter_list</mat-icon>
                                             </span>
                                             <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
                                             <span class="mat-button-focus-overlay"></span>
@@ -100,11 +100,11 @@
                                             </div>
                                         </mat-menu>
                                     </div>
-                                    <div class="button-container">
-                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
+                                    <div class="button-container-2">
+                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" [routerLink]="['/dashboard']">
                                             <span class="mat-button-wrapper">
                                                 <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font" [routerLink]="['/dashboard']">home</mat-icon>
+                                                    aria-hidden="true" data-mat-icon-type="font">home</mat-icon>
                                             </span>
                                             <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
                                             <span class="mat-button-focus-overlay"></span>
@@ -120,11 +120,21 @@
                         <div class="label">
                             <div class="button-row">
                                 <div class="flex-container">
-                                    <div class="button-container">
+                                    <div *ngIf="showPlusButton" class="button-container-2">
+                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="openPaymentForm()">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
+                                                    aria-hidden="true" data-mat-icon-type="font">add</mat-icon>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                    </div>
+                                    <div class="button-container-2">
                                         <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="signOut()">
                                             <span class="mat-button-wrapper">
                                                 <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font" [routerLink]="['/dashboard']">exit_to_app</mat-icon>
+                                                    aria-hidden="true" data-mat-icon-type="font">exit_to_app</mat-icon>
                                             </span>
                                             <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
                                             <span class="mat-button-focus-overlay"></span>

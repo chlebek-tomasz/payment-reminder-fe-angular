@@ -1,5 +1,8 @@
 <div class="box justify-content-center border border-secondary rounded">
-    <span>Podsumowanie miesiąca</span>
-    <p>payment-statistic-mini works!</p>
-    {{paymentStatistic.SummaryAmount}}
+    <div class="ml-4 mt-2 mb-0 p-0">
+        <h1><b>Podsumowanie miesiąca</b></h1>
+        <small>(Od {{paymentStatistic.Since}} do {{paymentStatistic.DueTo}})</small> <br/><br/>
+        <p><b>Wydatki: </b>{{paymentStatistic.SummaryAmount}}</p>
+        <p><b>Zapłacone rachunki: </b>{{paymentStatistic.PaymentCounts}}</p>
+    </div>
 </div>

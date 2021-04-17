@@ -13,6 +13,11 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MessageComponent } from './components/common/message/message.component';
+import { PaymentMiniComponent } from './components/payments/payment-mini/payment-mini.component';
+import { PaymentStatisticMiniComponent } from './components/payments/payment-statistic-mini/payment-statistic-mini.component';
+import { PaymentsListComponent } from './components/payments/payments-list/payments-list.component';
+import { PaymentsHistoryListComponent } from './components/payments/payments-history-list/payments-history-list.component';
+import { UserComponent } from './components/user/user.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,11 +28,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { PaymentMiniComponent } from './components/payments/payment-mini/payment-mini.component';
-import { PaymentStatisticMiniComponent } from './components/payments/payment-statistic-mini/payment-statistic-mini.component';
-import { PaymentsListComponent } from './components/payments/payments-list/payments-list.component';
-import { PaymentsHistoryListComponent } from './components/payments/payments-history-list/payments-history-list.component';
-import { UserComponent } from './components/user/user.component';
+import { MatTableModule } from '@angular/material/table';
+import { AddPaymentsComponent } from './components/payments/add-payments/add-payments.component';
+import { EditPaymentComponent } from './components/payments/edit-payment/edit-payment.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { UserComponent } from './components/user/user.component';
     PaymentsListComponent,
     PaymentsHistoryListComponent,
     UserComponent,
+    AddPaymentsComponent,
+    EditPaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,8 @@ import { UserComponent } from './components/user/user.component';
     MatSliderModule,
     MatSnackBarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

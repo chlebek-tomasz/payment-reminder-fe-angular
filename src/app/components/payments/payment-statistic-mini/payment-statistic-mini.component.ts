@@ -1,6 +1,6 @@
 import { PaymentStatistic } from './../../../models/PaymentStatistic';
 import { PaymentStatisticService } from './../../../services/payment-statistic/payment-statistic.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Payment } from 'src/app/models/Payment';
 
@@ -10,6 +10,8 @@ import { Payment } from 'src/app/models/Payment';
   styleUrls: ['./payment-statistic-mini.component.scss']
 })
 export class PaymentStatisticMiniComponent implements OnInit {
+
+  @Output() payments = new EventEmitter<Payment[]>();
 
   paymentStatistic: PaymentStatistic = new PaymentStatistic();
 
@@ -23,6 +25,7 @@ export class PaymentStatisticMiniComponent implements OnInit {
     return this.service.getPaymentsStatisticSinceTheBeginningOfMonthToNow()
       .subscribe(data => {
         this.paymentStatistic = new PaymentStatistic().deserialize(data);
+        this.payments.emit(this.paymentStatistic.Payments);
       })
   }
 

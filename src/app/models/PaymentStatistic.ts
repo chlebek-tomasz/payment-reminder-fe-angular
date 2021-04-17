@@ -55,7 +55,8 @@ export class PaymentStatistic {
         this.summaryAmount = input.summaryAmount;
         this.paymentCounts = input.paymentCounts;
 
-        for (let payment in input.paymentsDTOs) {
+        this.payments = [];
+        for (let payment of input.paymentDTOs) {
             this.payments.push(new Payment().deserialize(payment));
         }
 

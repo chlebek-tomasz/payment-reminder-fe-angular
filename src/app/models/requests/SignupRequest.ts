@@ -1,9 +1,9 @@
 
-export interface SignupRequest {
+export class SignupRequest {
 
-    email: string;
-    password: string;
-    firstName: string;
-    lastName: string;
+    public email: string;
+    public password: string;
+    public firstName: string;
+    public lastName: string;
 
 }

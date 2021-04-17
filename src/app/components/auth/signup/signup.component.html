@@ -1,1 +1,24 @@
-<p>signup works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Zarejestruj się</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input  matInput  placeholder="Email" [(ngModel)]="model.email"  type="email" name="email"  required>
+            </mat-form-field><br />
+            <mat-form-field>
+                <input  matInput  placeholder="Password" [(ngModel)]="model.password"  type="password"  name="password"  required>
+            </mat-form-field><br />
+            <mat-form-field>
+                <input  matInput  placeholder="First Name" [(ngModel)]="model.firstName"  type="text"  name="text"  required>
+            </mat-form-field><br />
+            <mat-form-field>
+                <input  matInput  placeholder="Last Name" [(ngModel)]="model.lastName"  type="text"  name="text"  required>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button  mat-raised-button (click)="onSubmit(model)"  color="primary">Załóż konto</button>
+    </mat-card-actions>
+</mat-card>

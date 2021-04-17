@@ -1,0 +1,142 @@
+<nav *ngIf="!isLoggedIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="float-left">
+                    <section>
+                        <div class="label">
+                            <div class="button-row">
+                                <div class="flex-container">
+                                    <div class="button-container">
+                                        <button mat-button color="primary" [routerLink]="['/']" class="mat-focus-indicator mat-button mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="false" data-mat-icon-type="font">
+                                                    payments
+                                                </mat-icon>
+                                                <!-- Payment Reminder -->
+                                                <span class="ml-2">Payment Reminder</span>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="float-right">
+                    <section>
+                        <div class="label">
+                            <div class="button-row">
+                                <div class="flex-container">
+                                    <div class="button-container">
+                                        <button mat-button color="primary" (click)="openRegisterForm()" class="mat-focus-indicator mat-button mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="false" data-mat-icon-type="font">
+                                                    <span class="material-icons-outlined">
+                                                        person_add_alt_1
+                                                    </span>
+                                                </mat-icon>
+                                                <span class="ml-2">Rejestracja</span>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                        <button mat-button color="primary" (click)="openLoginForm()" class="mat-focus-indicator mat-button mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="false" data-mat-icon-type="font">
+                                                    login
+                                                </mat-icon>
+                                                <span class="ml-2">Logowanie</span>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</nav>
+
+<nav *ngIf="isLoggedIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="float-left">
+                    <section>
+                        <div class="label">
+                            <div class="button-row">
+                                <div class="flex-container">
+                                    <div class="button-container">
+                                        <button mat-fab color="primary" [matMenuTriggerFor]="menu" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
+                                                    aria-hidden="true" data-mat-icon-type="font" [routerLink]="['/dashboard']">filter_list</mat-icon>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                        <mat-menu #menu="matMenu">
+                                            <div class="menu">
+                                                <button mat-menu-item [routerLink]="['/payments']">
+                                                    <mat-icon>payments</mat-icon>
+                                                    <span>Płatności</span>
+                                                </button>
+                                                <button mat-menu-item [routerLink]="['/payments-history']">
+                                                    <mat-icon>history</mat-icon>
+                                                    <span>Historia płatności</span>
+                                                </button>
+                                                <button mat-menu-item [routerLink]="['/user-profile']">
+                                                    <mat-icon>manage_accounts</mat-icon>
+                                                    <span>Profil użytkownika</span>
+                                                </button>
+                                            </div>
+                                        </mat-menu>
+                                    </div>
+                                    <div class="button-container">
+                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
+                                                    aria-hidden="true" data-mat-icon-type="font" [routerLink]="['/dashboard']">home</mat-icon>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="float-right">
+                    <section>
+                        <div class="label">
+                            <div class="button-row">
+                                <div class="flex-container">
+                                    <div class="button-container">
+                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="signOut()">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
+                                                    aria-hidden="true" data-mat-icon-type="font" [routerLink]="['/dashboard']">exit_to_app</mat-icon>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</nav>

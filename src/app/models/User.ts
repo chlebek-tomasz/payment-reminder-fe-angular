@@ -48,6 +48,6 @@ export class User {
     }
 
     public serialize(): string {
-        return JSON.stringify(this);
+        return JSON.parse(JSON.stringify(this));
     }
 }

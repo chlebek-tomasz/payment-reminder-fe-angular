@@ -25,12 +25,13 @@ export class TokenStorageService {
   }
 
   public saveUser(user: User): void {
+    console.log(user);
     sessionStorage.removeItem(USER_KEY);
-    sessionStorage.setItem(USER_KEY, user.serialize());
+    sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
   public getUser(): User {
-    return new User().deserialize(sessionStorage.getItem(USER_KEY));
+    return new User().deserialize(JSON.parse(sessionStorage.getItem(USER_KEY)));
   }
 
 }

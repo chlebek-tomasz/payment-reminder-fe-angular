@@ -1,0 +1,41 @@
+section {
+    display: table;
+}
+  
+.label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+
+.button-row {
+    display: table-cell;
+}
+
+.button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mat-fab .mat-button-wrapper {
+    padding: 0;
+    display: inline-block;
+    line-height: 24px;
+}
+
+.menu {
+    width: 200px;
+}
+

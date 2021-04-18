@@ -16,8 +16,6 @@ import { MessageComponent } from './components/common/message/message.component'
 import { PaymentMiniComponent } from './components/payments/payment-mini/payment-mini.component';
 import { PaymentStatisticMiniComponent } from './components/payments/payment-statistic-mini/payment-statistic-mini.component';
 import { PaymentsListComponent } from './components/payments/payments-list/payments-list.component';
-import { PaymentsHistoryListComponent } from './components/payments/payments-history-list/payments-history-list.component';
-import { UserComponent } from './components/user/user.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,6 +29,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { AddPaymentsComponent } from './components/payments/add-payments/add-payments.component';
 import { EditPaymentComponent } from './components/payments/edit-payment/edit-payment.component';
+import { ChangeEmailComponent } from './components/user/change-email/change-email.component';
+import { ChangePasswordComponent } from './components/user/change-password/change-password.component';
+import { ChangeDataComponent } from './components/user/change-data/change-data.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +45,11 @@ import { EditPaymentComponent } from './components/payments/edit-payment/edit-pa
     PaymentMiniComponent,
     PaymentStatisticMiniComponent,
     PaymentsListComponent,
-    PaymentsHistoryListComponent,
-    UserComponent,
     AddPaymentsComponent,
     EditPaymentComponent,
+    ChangeEmailComponent,
+    ChangePasswordComponent,
+    ChangeDataComponent,
   ],
   imports: [
     BrowserModule,

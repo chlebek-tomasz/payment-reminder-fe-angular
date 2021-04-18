@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class PaymentMiniComponent implements OnInit {
 
   payment: Payment = new Payment();
+  isPayment: boolean = false;
 
   constructor(private service: PaymentService) { }
 
@@ -21,7 +22,11 @@ export class PaymentMiniComponent implements OnInit {
   public getNearestPayment() {
     return this.service.getNearestPayment()
         .subscribe(data => {
+          this.isPayment = true;
           this.payment = new Payment().deserialize(data);
+        }, err => {
+          this.isPayment = false;
+          this.payment = new Payment();
         })
   }
 

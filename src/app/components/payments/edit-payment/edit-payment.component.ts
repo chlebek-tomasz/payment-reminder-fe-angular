@@ -16,7 +16,7 @@ import { PaymentRequest } from 'src/app/models/requests/PaymentRequest';
 export class EditPaymentComponent implements OnInit {
 
   model: PaymentRequest;
-  payment: Payment;
+  payment: Payment
   isLoggedIn = false;
 
   constructor(private dialog: MatDialog,
@@ -29,10 +29,10 @@ export class EditPaymentComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
     if (this.isLoggedIn) {
-      this.model = new PaymentRequest();
+      this.model = new PaymentRequest().deserialize(this.data.element);
       this.payment = this.data.element;
-      this.model.title = this.payment.Title;
-      this.model.recipientAccountNumber = this.payment.RecipientAccountNumber;
+      // this.model.title = this.payment.Title;
+      // this.model.recipientAccountNumber = this.payment.RecipientAccountNumber;
     } else {
     this.router.navigate(['/']);
     }

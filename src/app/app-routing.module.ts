@@ -1,5 +1,3 @@
-import { UserComponent } from './components/user/user.component';
-import { PaymentsHistoryListComponent } from './components/payments/payments-history-list/payments-history-list.component';
 import { PaymentsListComponent } from './components/payments/payments-list/payments-list.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -14,9 +12,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
-  { path: 'payments', component: PaymentsListComponent },
-  { path: 'payments-history', component: PaymentsListComponent },
-  { path: 'user-profile', component: UserComponent },
+  { path: 'payments', component: PaymentsListComponent, canActivate: [AuthGuard] },
+  { path: 'payments-history', component: PaymentsListComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

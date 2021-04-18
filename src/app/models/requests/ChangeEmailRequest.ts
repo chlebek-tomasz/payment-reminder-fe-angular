@@ -1,5 +1,5 @@
 
-export interface ChangeEmailRequest {
+export class ChangeEmailRequest {
 
     oldEmail: string;
     newEmail: string;

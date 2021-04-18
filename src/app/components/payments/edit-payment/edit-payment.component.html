@@ -5,7 +5,7 @@
     <mat-card-content>
         <form (keydown.enter)="onSubmit(model)">
             <mat-form-field>
-                <input  matInput  placeholder="Tytuł" [(ngModel)]="model.title"  type="text" name="text" required>
+                <input  matInput  placeholder="Tytuł" [(ngModel)]="model.title" ngtype="text" name="text" required>
             </mat-form-field><br/>
             <mat-form-field>
                 <input  matInput  placeholder="Odbiorca" [(ngModel)]="model.recipient"  type="text"  name="text" required>

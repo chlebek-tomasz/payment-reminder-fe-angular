@@ -43,7 +43,7 @@ export class PaymentService {
   }
 
   public changePaymentStatusToPaid(id: string) {
-    return this.httpClient.put(UrlHelper.PAYMENT + id + '/paid', this.requestOptions);
+    return this.httpClient.get(UrlHelper.PAYMENT + id + '/paid', this.requestOptions);
   }
 
   public deletePayment(id: string) {

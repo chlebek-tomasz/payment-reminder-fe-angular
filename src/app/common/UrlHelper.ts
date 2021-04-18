@@ -12,4 +12,6 @@ export class UrlHelper {
     static PAYMENT: string = UrlHelper.API + 'payments/';
     static PAYMENT_USER: string = UrlHelper.PAYMENT + 'users/';
     static PAYMENT_STATISCTIC: string = UrlHelper.PAYMENT + 'statistics/users/';
+
+    static USER: string = UrlHelper.API + 'users/';
 }

@@ -56,7 +56,8 @@ export class PaymentsListComponent implements OnInit, OnChanges {
   }
 
   changeStatusToPaid(id: string): void {
-    this.service.changePaymentStatusToPaid(id).subscribe(data => { 
+    this.service.changePaymentStatusToPaid(id).subscribe(data => {
+      this.ngOnInit();
       this.snackBar.open('Zmieniono status', 'Close', {
         duration: 2000,
         panelClass: ['success']
@@ -71,6 +72,7 @@ export class PaymentsListComponent implements OnInit, OnChanges {
 
   deletePayment(id: string): void {
     this.service.deletePayment(id).subscribe(data => {
+      this.ngOnInit();
       this.snackBar.open('Usunięto płatmość', 'Close', {
         duration: 2000,
         panelClass: ['success']

@@ -1,3 +1,5 @@
+import { ChangeDataComponent } from './../../user/change-data/change-data.component';
+import { ChangeEmailComponent } from './../../user/change-email/change-email.component';
 import { AddPaymentsComponent } from './../../payments/add-payments/add-payments.component';
 import { TokenStorageService } from './../../../services/token-storage.service';
 import { Component, OnChanges, OnInit } from '@angular/core';
@@ -6,6 +8,7 @@ import { LoginComponent } from '../../auth/login/login.component';
 import { SignupComponent } from '../../auth/signup/signup.component';
 import { Router } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
+import { ChangePasswordComponent } from '../../user/change-password/change-password.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -45,6 +48,19 @@ export class NavBarComponent implements OnInit {
   public openPaymentForm() {
     this.dialog.open(AddPaymentsComponent);
   }
+
+  public openChangeEmailForm() {
+    this.dialog.open(ChangeEmailComponent);
+  }
+
+  public openChangePasswordForm() {
+    this.dialog.open(ChangePasswordComponent);
+  }
+
+  public openChangeUserDetailsForm() {
+    this.dialog.open(ChangeDataComponent);
+  }
+
 
   public signOut() {
     this.router.navigate(['/']);

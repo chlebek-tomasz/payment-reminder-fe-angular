@@ -93,10 +93,6 @@
                                                     <mat-icon>history</mat-icon>
                                                     <span>Historia płatności</span>
                                                 </button>
-                                                <button mat-menu-item [routerLink]="['/user-profile']">
-                                                    <mat-icon>manage_accounts</mat-icon>
-                                                    <span>Profil użytkownika</span>
-                                                </button>
                                             </div>
                                         </mat-menu>
                                     </div>
@@ -129,6 +125,32 @@
                                             <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
                                             <span class="mat-button-focus-overlay"></span>
                                         </button>
+                                    </div>
+                                    <div class="button-container-2">
+                                        <button mat-fab color="primary" [matMenuTriggerFor]="menu2" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
+                                                    aria-hidden="true" data-mat-icon-type="font">manage_accounts</mat-icon>
+                                            </span>
+                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                                            <span class="mat-button-focus-overlay"></span>
+                                        </button>
+                                        <mat-menu #menu2="matMenu">
+                                            <div class="menu">
+                                                <button mat-menu-item (click)="openChangeEmailForm()">
+                                                    <mat-icon>alternate_email</mat-icon>
+                                                    <span>Zmień email</span>
+                                                </button>
+                                                <button mat-menu-item (click)="openChangePasswordForm()">
+                                                    <mat-icon>password</mat-icon>
+                                                    <span>Zmień hasło</span>
+                                                </button>
+                                                <button mat-menu-item (click)="openChangeUserDetailsForm()">
+                                                    <mat-icon>person_pin</mat-icon>
+                                                    <span>Zmień dane</span>
+                                                </button>
+                                            </div>
+                                        </mat-menu>
                                     </div>
                                     <div class="button-container-2">
                                         <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="signOut()">

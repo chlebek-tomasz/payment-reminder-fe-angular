@@ -58,12 +58,12 @@ export class PaymentsListComponent implements OnInit, OnChanges {
   changeStatusToPaid(id: string): void {
     this.service.changePaymentStatusToPaid(id).subscribe(data => {
       this.ngOnInit();
-      this.snackBar.open('Zmieniono status', 'Close', {
+      this.snackBar.open('Zmieniono status', 'Zamknij', {
         duration: 2000,
         panelClass: ['success']
       });
     }, err => {
-      this.snackBar.open('Wystąpił błąd przy zmianie statusu', 'Close', {
+      this.snackBar.open('Wystąpił błąd przy zmianie statusu', 'Zamknij', {
         duration: 2000,
         panelClass: ['failure']
       });
@@ -73,12 +73,12 @@ export class PaymentsListComponent implements OnInit, OnChanges {
   deletePayment(id: string): void {
     this.service.deletePayment(id).subscribe(data => {
       this.ngOnInit();
-      this.snackBar.open('Usunięto płatmość', 'Close', {
+      this.snackBar.open('Usunięto płatmość', 'Zamknij', {
         duration: 2000,
         panelClass: ['success']
       });
     }, err => {
-      this.snackBar.open('Wystąpił błąd przy usuwaniu płatności', 'Close', {
+      this.snackBar.open('Wystąpił błąd przy usuwaniu płatności', 'Zamknij', {
         duration: 2000,
         panelClass: ['failure']
       });

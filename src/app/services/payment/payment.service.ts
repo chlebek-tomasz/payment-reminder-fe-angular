@@ -13,45 +13,45 @@ import { Payment } from 'src/app/models/Payment';
 })
 export class PaymentService {
 
-  headerDict = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Basic ' + this.tokenStorageService.getToken(),
-  }
-  
-  requestOptions = {
-    headers: new HttpHeaders(this.headerDict),
-  };
-
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
               private authService: AuthService) { }
+    
+  private getHeaders() {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + this.tokenStorageService.getToken(),
+      }),
+    };
+  }
 
   public getNearestPayment(): Observable<any> {
-    return this.httpClient.get<Payment>(UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/nearest', this.requestOptions);
+    return this.httpClient.get<Payment>(UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/nearest', this.getHeaders());
   }
 
   public getHistoryListPayment(): Observable<any> {
-    return this.httpClient.get<Payment>(UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/history', this.requestOptions);
+    return this.httpClient.get<Payment>(UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/history', this.getHeaders());
   }
 
   public getUserPayments() {
-    return this.httpClient.get<Payment[]>(UrlHelper.PAYMENT_USER + this.authService.getUserId(), this.requestOptions);
+    return this.httpClient.get<Payment[]>(UrlHelper.PAYMENT_USER + this.authService.getUserId(), this.getHeaders());
   }
 
   public postNewPayment(request: PaymentRequest) {
-    return this.httpClient.post(UrlHelper.PAYMENT, request, this.requestOptions);
+    return this.httpClient.post(UrlHelper.PAYMENT, request, this.getHeaders());
   }
 
   public changePaymentStatusToPaid(id: string) {
-    return this.httpClient.get(UrlHelper.PAYMENT + id + '/paid', this.requestOptions);
+    return this.httpClient.get(UrlHelper.PAYMENT + id + '/paid', this.getHeaders());
   }
 
   public deletePayment(id: string) {
-    return this.httpClient.delete(UrlHelper.PAYMENT + id, this.requestOptions);
+    return this.httpClient.delete(UrlHelper.PAYMENT + id, this.getHeaders());
   }
 
   public editPayment(id: string, request: PaymentRequest) {
-    return this.httpClient.put(UrlHelper.PAYMENT + id, request, this.requestOptions);
+    return this.httpClient.put(UrlHelper.PAYMENT + id, request, this.getHeaders());
   }
 
 

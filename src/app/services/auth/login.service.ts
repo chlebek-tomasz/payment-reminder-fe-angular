@@ -12,6 +12,6 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   login(signinRequest: SigninRequest): Observable<any> {
-    return this.httpClient.post(UrlHelper.SIGNIN, signinRequest);
+    return this.httpClient.post(UrlHelper.SIGNIN, signinRequest).pipe();
   }
 }

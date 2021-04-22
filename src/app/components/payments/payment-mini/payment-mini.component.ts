@@ -22,12 +22,13 @@ export class PaymentMiniComponent implements OnInit {
   public getNearestPayment() {
     return this.service.getNearestPayment()
         .subscribe(data => {
-          this.isPayment = true;
-          this.payment = new Payment().deserialize(data);
-        }, err => {
-          this.isPayment = false;
-          this.payment = new Payment();
-        })
+          if (data == null) {
+            this.isPayment = false;
+          } else {
+            this.isPayment = true;
+            this.payment = new Payment().deserialize(data);
+          }
+        });
   }
 
 }

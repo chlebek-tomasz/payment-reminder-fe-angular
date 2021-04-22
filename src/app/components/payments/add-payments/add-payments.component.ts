@@ -34,14 +34,14 @@ export class AddPaymentsComponent implements OnInit {
   onSubmit(paymentRequest) {
     this.paymentService.postNewPayment(paymentRequest).subscribe(data => {
       this.dialog.closeAll();
-      this.snackBar.open('Login success', 'Close', {
+      this.snackBar.open('Dodano płatność', 'Zamknij', {
         duration: 2000,
         panelClass: ['success']
       });
       this.router.navigate(['/payments']);
     }, 
     err => {
-      this.snackBar.open('Post failed', 'Close', {
+      this.snackBar.open('Wystąpił błąd, spróbuj ponownie', 'Zamknij', {
         duration: 2000,
         panelClass: ['failure']
       });

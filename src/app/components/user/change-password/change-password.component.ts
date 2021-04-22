@@ -35,6 +35,9 @@ export class ChangePasswordComponent implements OnInit {
     this.userService.changeUserPassword(request).subscribe(
       data => {
         this.dialog.closeAll();
+        this.tokenStorage.signOut();
+        this.tokenStorage.saveToken(data.token);
+        this.tokenStorage.saveUser(data.user);
         this.snackBar.open('Hasło zmienione!', 'Zamknij', {
           duration: 2000,
           panelClass: ['success']

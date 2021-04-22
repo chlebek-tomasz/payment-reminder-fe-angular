@@ -12,25 +12,24 @@ import { Observable } from 'rxjs';
 })
 export class PaymentStatisticService {
 
-  headerDict = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Basic ' + this.tokenStorageService.getToken(),
-  }
-  
-  requestOptions = {
-    headers: new HttpHeaders(this.headerDict),
-  };
-
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
               private authService: AuthService) { }
 
+    private getHeaders() {
+      return {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + this.tokenStorageService.getToken(),
+        }),
+      };
+    }
   
   public getPaymentsStatisticSinceTheBeginningOfMonthToNow(): Observable<any> {
-    return this.httpClient.get<PaymentStatistic>(UrlHelper.PAYMENT_STATISCTIC + this.authService.getUserId() + '/since-beginning-month', this.requestOptions);
+    return this.httpClient.get<PaymentStatistic>(UrlHelper.PAYMENT_STATISCTIC + this.authService.getUserId() + '/since-beginning-month', this.getHeaders());
   }
 
   public getUpcomingPaymentsStatisticToTheEndOfMonth() {
-    return this.httpClient.get<PaymentStatistic>(UrlHelper.PAYMENT_STATISCTIC + this.authService.getUserId() + '/upcoming', this.requestOptions);
+    return this.httpClient.get<PaymentStatistic>(UrlHelper.PAYMENT_STATISCTIC + this.authService.getUserId() + '/upcoming', this.getHeaders());
   }
 }

@@ -40,14 +40,14 @@ export class SignupComponent implements OnInit {
         this.dialog.closeAll();
         this.isSuccessful = true;
         this.dialog.open(LoginComponent);
-        this.snackBar.open('Account created successfully', 'Close', {
+        this.snackBar.open('Konto założone pomyślnie', 'Zamknij', {
           duration: 2000,
           panelClass: ['success']
         });
       },
       err => {
         this.isSuccessful = false;
-        this.snackBar.open('Try again!', 'Close', {
+        this.snackBar.open('Założenie konta nie powiodło się, spróbuj ponownie', 'Zamknij', {
           duration: 2000,
           panelClass: ['failure']
         });

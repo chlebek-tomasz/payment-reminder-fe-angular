@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.snackBar.open('Login success', 'Close', {
+        this.snackBar.open('Logowanie zakończone sukcesem', 'Zamknij', {
           duration: 2000,
           panelClass: ['success']
         });
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       },
       err => {
         this.isLoginFailed = true;
-        this.snackBar.open('Login failed', 'Close', {
+        this.snackBar.open('Logowanie nie powiodło się', 'Zamknij', {
           duration: 2000,
           panelClass: ['failure']
         });

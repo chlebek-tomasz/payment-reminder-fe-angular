@@ -17,7 +17,12 @@
                 <input  matInput  placeholder="Okresowość płatności (dni)" [(ngModel)]="model.periodicity"  type="number"  name="number" required>
             </mat-form-field><br/>
             <mat-form-field>
-                <input  matInput  placeholder="Kategoria" [(ngModel)]="model.categoryId"  type="number"  name="number" required>
+                <mat-label>Kategoria</mat-label>
+                <mat-select [(ngModel)]="model.categoryId" name="categories" required>
+                    <mat-option *ngFor="let cat of paymentCategories" [value]="cat.id">
+                        {{cat.categoryName}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field><br/>
             <mat-form-field>
                 <input  matInput  placeholder="Termin" [(ngModel)]="model.dueTo"  type="text"  name="text" required>

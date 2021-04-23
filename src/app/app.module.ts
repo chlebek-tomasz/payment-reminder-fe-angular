@@ -27,6 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 import { AddPaymentsComponent } from './components/payments/add-payments/add-payments.component';
 import { EditPaymentComponent } from './components/payments/edit-payment/edit-payment.component';
 import { ChangeEmailComponent } from './components/user/change-email/change-email.component';
@@ -67,7 +68,8 @@ import { ChangeDataComponent } from './components/user/change-data/change-data.c
     MatSnackBarModule,
     MatIconModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [
   ],

@@ -30,12 +30,20 @@ export class PaymentService {
     return this.httpClient.get<Payment>(UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/nearest', this.getHeaders());
   }
 
-  public getHistoryListPayment(): Observable<any> {
-    return this.httpClient.get<Payment>(UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/history', this.getHeaders());
+  public getHistoryListPayment(categoryId?: string): Observable<any> {
+    let url: string = UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/history';
+    if (categoryId != null) {
+      url += '?categoryId=' + categoryId;
+    }
+    return this.httpClient.get<Payment>(url, this.getHeaders());
   }
 
-  public getUserPayments() {
-    return this.httpClient.get<Payment[]>(UrlHelper.PAYMENT_USER + this.authService.getUserId(), this.getHeaders());
+  public getUserPayments(categoryId?: string) {
+    let url: string = UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/history';
+    if (categoryId != null) {
+      url += '?categoryId=' + categoryId;
+    }
+    return this.httpClient.get<Payment[]>(url, this.getHeaders());
   }
 
   public postNewPayment(request: PaymentRequest) {

@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { PaymentService } from 'src/app/services/payment/payment.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { PaymentRequest } from 'src/app/models/requests/PaymentRequest';
+import { PaymentCategoryService } from 'src/app/services/payment/payment-category.service';
+import { PaymentCategory } from 'src/app/models/PaymentCategory';
 
 @Component({
   selector: 'app-edit-payment',
@@ -17,10 +19,12 @@ export class EditPaymentComponent implements OnInit {
 
   model: PaymentRequest;
   payment: Payment
+  paymentCategories: PaymentCategory[] = [];
   isLoggedIn = false;
 
   constructor(private dialog: MatDialog,
               private paymentService: PaymentService,
+              private paymentCategoryService: PaymentCategoryService,
               private tokenStorage: TokenStorageService,
               private router: Router,
               private snackBar: MatSnackBar,
@@ -30,7 +34,11 @@ export class EditPaymentComponent implements OnInit {
     this.isLoggedIn = !!this.tokenStorage.getToken();
     if (this.isLoggedIn) {
       this.model = new PaymentRequest().deserialize(this.data.element);
+      console.log(this.model);
       this.payment = this.data.element;
+      this.paymentCategoryService.getCategories().subscribe(data => {
+        this.paymentCategories = data;
+      });
       // this.model.title = this.payment.Title;
       // this.model.recipientAccountNumber = this.payment.RecipientAccountNumber;
     } else {

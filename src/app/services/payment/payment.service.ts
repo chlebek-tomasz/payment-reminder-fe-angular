@@ -39,7 +39,7 @@ export class PaymentService {
   }
 
   public getUserPayments(categoryId?: string) {
-    let url: string = UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/history';
+    let url: string = UrlHelper.PAYMENT_USER + this.authService.getUserId() + '/';
     if (categoryId != null) {
       url += '?categoryId=' + categoryId;
     }

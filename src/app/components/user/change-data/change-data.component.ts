@@ -1,10 +1,10 @@
-import { ChangeUserDetailsRequest } from './../../../models/requests/ChangeUserDetailsRequest';
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { UserService } from 'src/app/services/user/user.service';
+import {ChangeUserDetailsRequest} from './../../../models/requests/ChangeUserDetailsRequest';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
+import {TokenStorageService} from 'src/app/services/token-storage.service';
+import {UserService} from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-change-data',
@@ -20,7 +20,8 @@ export class ChangeDataComponent implements OnInit {
               private userService: UserService,
               private tokenStorage: TokenStorageService,
               private router: Router,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
@@ -45,7 +46,7 @@ export class ChangeDataComponent implements OnInit {
           duration: 2000,
           panelClass: ['failure']
         });
-      } 
+      }
     );
   }
 

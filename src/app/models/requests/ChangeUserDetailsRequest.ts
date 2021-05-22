@@ -1,7 +1,6 @@
-
 export class ChangeUserDetailsRequest {
 
-    firstName: string;
-    lastName: string;
-    
+  firstName: string;
+  lastName: string;
+
 }

@@ -1,11 +1,11 @@
-import { ChangeUserDetailsRequest } from './../../models/requests/ChangeUserDetailsRequest';
-import { ChangePasswordRequest } from './../../models/requests/ChangePasswordRequest';
-import { UrlHelper } from './../../common/UrlHelper';
-import { ChangeEmailRequest } from './../../models/requests/ChangeEmailRequest';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { AuthService } from '../auth.service';
-import { TokenStorageService } from '../token-storage.service';
+import {ChangeUserDetailsRequest} from './../../models/requests/ChangeUserDetailsRequest';
+import {ChangePasswordRequest} from './../../models/requests/ChangePasswordRequest';
+import {UrlHelper} from './../../common/UrlHelper';
+import {ChangeEmailRequest} from './../../models/requests/ChangeEmailRequest';
+import {HttpHeaders, HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {AuthService} from '../auth.service';
+import {TokenStorageService} from '../token-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,8 @@ export class UserService {
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
-              private authService: AuthService) { }
+              private authService: AuthService) {
+  }
 
   private getHeaders() {
     return {

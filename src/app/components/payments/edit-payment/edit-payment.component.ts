@@ -1,14 +1,14 @@
-import { Payment } from './../../../models/Payment';
-import { element } from 'protractor';
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { PaymentService } from 'src/app/services/payment/payment.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { PaymentRequest } from 'src/app/models/requests/PaymentRequest';
-import { PaymentCategoryService } from 'src/app/services/payment/payment-category.service';
-import { PaymentCategory } from 'src/app/models/PaymentCategory';
+import {Payment} from './../../../models/Payment';
+import {element} from 'protractor';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
+import {PaymentService} from 'src/app/services/payment/payment.service';
+import {TokenStorageService} from 'src/app/services/token-storage.service';
+import {PaymentRequest} from 'src/app/models/requests/PaymentRequest';
+import {PaymentCategoryService} from 'src/app/services/payment/payment-category.service';
+import {PaymentCategory} from 'src/app/models/PaymentCategory';
 
 @Component({
   selector: 'app-edit-payment',
@@ -28,7 +28,8 @@ export class EditPaymentComponent implements OnInit {
               private tokenStorage: TokenStorageService,
               private router: Router,
               private snackBar: MatSnackBar,
-              @Inject(MAT_DIALOG_DATA) public  data:  any) { }
+              @Inject(MAT_DIALOG_DATA) public data: any) {
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
@@ -42,25 +43,25 @@ export class EditPaymentComponent implements OnInit {
       // this.model.title = this.payment.Title;
       // this.model.recipientAccountNumber = this.payment.RecipientAccountNumber;
     } else {
-    this.router.navigate(['/']);
+      this.router.navigate(['/']);
     }
   }
 
   onSubmit(paymentRequest) {
     this.paymentService.editPayment(this.payment.Id, paymentRequest).subscribe(data => {
-      this.dialog.closeAll();
-      this.snackBar.open('Edycja zakończona sukcesem', 'Zamknij', {
-        duration: 2000,
-        panelClass: ['success']
-      });
-      this.router.navigate(['/payments']);
-    }, 
-    err => {
-      this.snackBar.open('Wystąpił błąd podczas edycji, spróbuj ponownie', 'Zamknij', {
-        duration: 2000,
-        panelClass: ['failure']
-      });
-    })
+        this.dialog.closeAll();
+        this.snackBar.open('Edycja zakończona sukcesem', 'Zamknij', {
+          duration: 2000,
+          panelClass: ['success']
+        });
+        this.router.navigate(['/payments']);
+      },
+      err => {
+        this.snackBar.open('Wystąpił błąd podczas edycji, spróbuj ponownie', 'Zamknij', {
+          duration: 2000,
+          panelClass: ['failure']
+        });
+      })
   }
 
 }

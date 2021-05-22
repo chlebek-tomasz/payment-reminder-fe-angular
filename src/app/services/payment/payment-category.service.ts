@@ -1,10 +1,10 @@
-import { PaymentCategory } from './../../models/PaymentCategory';
-import { UrlHelper } from './../../common/UrlHelper';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AuthService } from '../auth.service';
-import { TokenStorageService } from '../token-storage.service';
+import {PaymentCategory} from './../../models/PaymentCategory';
+import {UrlHelper} from './../../common/UrlHelper';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {AuthService} from '../auth.service';
+import {TokenStorageService} from '../token-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,8 @@ export class PaymentCategoryService {
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
-              private authService: AuthService) { }
+              private authService: AuthService) {
+  }
 
   private getHeaders() {
     return {

@@ -1,10 +1,10 @@
-import { ChangeEmailRequest } from './../../../models/requests/ChangeEmailRequest';
-import { UserService } from './../../../services/user/user.service';
-import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import {ChangeEmailRequest} from './../../../models/requests/ChangeEmailRequest';
+import {UserService} from './../../../services/user/user.service';
+import {Component, OnInit} from '@angular/core';
+import {TokenStorageService} from 'src/app/services/token-storage.service';
+import {MatDialog} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-change-email',
@@ -20,7 +20,8 @@ export class ChangeEmailComponent implements OnInit {
               private userService: UserService,
               private tokenStorage: TokenStorageService,
               private router: Router,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
@@ -48,7 +49,7 @@ export class ChangeEmailComponent implements OnInit {
           duration: 2000,
           panelClass: ['failure']
         });
-      } 
+      }
     );
   }
 

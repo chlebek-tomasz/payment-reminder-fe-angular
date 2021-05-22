@@ -1,7 +1,6 @@
-
 export class ChangeEmailRequest {
 
-    oldEmail: string;
-    newEmail: string;
-    
+  oldEmail: string;
+  newEmail: string;
+
 }

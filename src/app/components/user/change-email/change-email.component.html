@@ -1,18 +1,19 @@
 <mat-card>
-    <mat-card-header>
-        <mat-card-title>Zmień email</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form (keydown.enter)="onSubmit(model)">
-            <mat-form-field>
-                <input  matInput  placeholder="Stary email" [(ngModel)]="model.oldEmail"  type="email" name="oldEmail"  required>
-            </mat-form-field><br />
-            <mat-form-field>
-                <input  matInput  placeholder="Nowy email" [(ngModel)]="model.newEmail"  type="email"  name="newEmail"  required>
-            </mat-form-field>
-        </form>
-    </mat-card-content>
-    <mat-card-actions>
-        <button  mat-raised-button (click)="onSubmit(model)" color="primary">Wyślij</button>
-    </mat-card-actions>
+  <mat-card-header>
+    <mat-card-title>Zmień email</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (keydown.enter)="onSubmit(model)">
+      <mat-form-field>
+        <input matInput placeholder="Stary email" [(ngModel)]="model.oldEmail" type="email" name="oldEmail" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput placeholder="Nowy email" [(ngModel)]="model.newEmail" type="email" name="newEmail" required>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="onSubmit(model)" color="primary">Wyślij</button>
+  </mat-card-actions>
 </mat-card>

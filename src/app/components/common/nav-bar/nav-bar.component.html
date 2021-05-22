@@ -1,174 +1,197 @@
 <nav *ngIf="!isLoggedIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="float-left">
-                    <section>
-                        <div class="label">
-                            <div class="button-row">
-                                <div class="flex-container">
-                                    <div class="button-container">
-                                        <button mat-button color="primary" [routerLink]="['/']" class="mat-focus-indicator mat-button mat-button-base mat-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="float-left">
+          <section>
+            <div class="label">
+              <div class="button-row">
+                <div class="flex-container">
+                  <div class="button-container">
+                    <button mat-button color="primary" [routerLink]="['/']"
+                            class="mat-focus-indicator mat-button mat-button-base mat-primary">
                                             <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="false" data-mat-icon-type="font">
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="false" data-mat-icon-type="font">
                                                     payments
                                                 </mat-icon>
-                                                <!-- Payment Reminder -->
+                                              <!-- Payment Reminder -->
                                                 <span class="ml-2">Payment Reminder</span>
                                             </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                  </div>
                 </div>
-                <div class="float-right">
-                    <section>
-                        <div class="label">
-                            <div class="button-row">
-                                <div class="flex-container">
-                                    <div class="button-container">
-                                        <button mat-button color="primary" (click)="openRegisterForm()" class="mat-focus-indicator mat-button mat-button-base mat-primary">
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="float-right">
+          <section>
+            <div class="label">
+              <div class="button-row">
+                <div class="flex-container">
+                  <div class="button-container">
+                    <button mat-button color="primary" (click)="openRegisterForm()"
+                            class="mat-focus-indicator mat-button mat-button-base mat-primary">
                                             <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="false" data-mat-icon-type="font">
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="false" data-mat-icon-type="font">
                                                     <span class="material-icons-outlined">
                                                         person_add_alt_1
                                                     </span>
                                                 </mat-icon>
                                                 <span class="ml-2">Rejestracja</span>
                                             </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                        <button mat-button color="primary" (click)="openLoginForm()" class="mat-focus-indicator mat-button mat-button-base mat-primary">
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                    <button mat-button color="primary" (click)="openLoginForm()"
+                            class="mat-focus-indicator mat-button mat-button-base mat-primary">
                                             <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="false" data-mat-icon-type="font">
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="false" data-mat-icon-type="font">
                                                     login
                                                 </mat-icon>
                                                 <span class="ml-2">Logowanie</span>
                                             </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-rount"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
+          </section>
         </div>
+      </div>
     </div>
-    <hr>
+  </div>
+  <hr>
 </nav>
 
 <nav *ngIf="isLoggedIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="float-left">
-                    <section>
-                        <div class="label">
-                            <div class="button-row">
-                                <div class="flex-container">
-                                    <div class="button-container-2">
-                                        <button mat-fab color="primary" [matMenuTriggerFor]="menu" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="float-left">
+          <section>
+            <div class="label">
+              <div class="button-row">
+                <div class="flex-container">
+                  <div class="button-container-2">
+                    <button mat-fab color="primary" [matMenuTriggerFor]="menu" aria-label="Menu icon"
+                            class="mat-focus-indicator mat-fab mat-button-base mat-primary">
                                             <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font">filter_list</mat-icon>
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="true"
+                                                          data-mat-icon-type="font">filter_list</mat-icon>
                                             </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                        <mat-menu #menu="matMenu">
-                                            <div class="menu">
-                                                <button mat-menu-item [routerLink]="['/payments']">
-                                                    <mat-icon>payments</mat-icon>
-                                                    <span>Płatności</span>
-                                                </button>
-                                                <button mat-menu-item [routerLink]="['/payments-history']">
-                                                    <mat-icon>history</mat-icon>
-                                                    <span>Historia płatności</span>
-                                                </button>
-                                            </div>
-                                        </mat-menu>
-                                    </div>
-                                    <div class="button-container-2">
-                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" [routerLink]="['/dashboard']">
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <div class="menu">
+                        <button mat-menu-item [routerLink]="['/payments']">
+                          <mat-icon>payments</mat-icon>
+                          <span>Płatności</span>
+                        </button>
+                        <button mat-menu-item [routerLink]="['/payments-history']">
+                          <mat-icon>history</mat-icon>
+                          <span>Historia płatności</span>
+                        </button>
+                      </div>
+                    </mat-menu>
+                  </div>
+                  <div class="button-container-2">
+                    <button mat-fab color="primary" aria-label="Menu icon"
+                            class="mat-focus-indicator mat-fab mat-button-base mat-primary"
+                            [routerLink]="['/dashboard']">
                                             <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font">home</mat-icon>
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="true" data-mat-icon-type="font">home</mat-icon>
                                             </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                  </div>
                 </div>
-                <div class="float-right">
-                    <section>
-                        <div class="label">
-                            <div class="button-row">
-                                <div class="flex-container">
-                                    <div *ngIf="showPlusButton" class="button-container-2">
-                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="openPaymentForm()">
-                                            <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font">add</mat-icon>
-                                            </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                    </div>
-                                    <div class="button-container-2">
-                                        <button mat-fab color="primary" [matMenuTriggerFor]="menu2" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary">
-                                            <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font">manage_accounts</mat-icon>
-                                            </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                        <mat-menu #menu2="matMenu">
-                                            <div class="menu">
-                                                <button mat-menu-item (click)="openChangeEmailForm()">
-                                                    <mat-icon>alternate_email</mat-icon>
-                                                    <span>Zmień email</span>
-                                                </button>
-                                                <button mat-menu-item (click)="openChangePasswordForm()">
-                                                    <mat-icon>password</mat-icon>
-                                                    <span>Zmień hasło</span>
-                                                </button>
-                                                <button mat-menu-item (click)="openChangeUserDetailsForm()">
-                                                    <mat-icon>person_pin</mat-icon>
-                                                    <span>Zmień dane</span>
-                                                </button>
-                                            </div>
-                                        </mat-menu>
-                                    </div>
-                                    <div class="button-container-2">
-                                        <button mat-fab color="primary" aria-label="Menu icon" class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="signOut()">
-                                            <span class="mat-button-wrapper">
-                                                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" 
-                                                    aria-hidden="true" data-mat-icon-type="font">exit_to_app</mat-icon>
-                                            </span>
-                                            <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
-                                            <span class="mat-button-focus-overlay"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+              </div>
             </div>
+          </section>
         </div>
+        <div class="float-right">
+          <section>
+            <div class="label">
+              <div class="button-row">
+                <div class="flex-container">
+                  <div *ngIf="showPlusButton" class="button-container-2">
+                    <button mat-fab color="primary" aria-label="Menu icon"
+                            class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="openPaymentForm()">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="true" data-mat-icon-type="font">add</mat-icon>
+                                            </span>
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                  </div>
+                  <div class="button-container-2">
+                    <button mat-fab color="primary" [matMenuTriggerFor]="menu2" aria-label="Menu icon"
+                            class="mat-focus-indicator mat-fab mat-button-base mat-primary">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="true"
+                                                          data-mat-icon-type="font">manage_accounts</mat-icon>
+                                            </span>
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                    <mat-menu #menu2="matMenu">
+                      <div class="menu">
+                        <button mat-menu-item (click)="openChangeEmailForm()">
+                          <mat-icon>alternate_email</mat-icon>
+                          <span>Zmień email</span>
+                        </button>
+                        <button mat-menu-item (click)="openChangePasswordForm()">
+                          <mat-icon>password</mat-icon>
+                          <span>Zmień hasło</span>
+                        </button>
+                        <button mat-menu-item (click)="openChangeUserDetailsForm()">
+                          <mat-icon>person_pin</mat-icon>
+                          <span>Zmień dane</span>
+                        </button>
+                      </div>
+                    </mat-menu>
+                  </div>
+                  <div class="button-container-2">
+                    <button mat-fab color="primary" aria-label="Menu icon"
+                            class="mat-focus-indicator mat-fab mat-button-base mat-primary" (click)="signOut()">
+                                            <span class="mat-button-wrapper">
+                                                <mat-icon role="img"
+                                                          class="mat-icon notranslate material-icons mat-icon-no-color"
+                                                          aria-hidden="true"
+                                                          data-mat-icon-type="font">exit_to_app</mat-icon>
+                                            </span>
+                      <span matriple class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+                      <span class="mat-button-focus-overlay"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
-    <hr>
+  </div>
+  <hr>
 </nav>

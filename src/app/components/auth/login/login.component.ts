@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { SigninRequest } from 'src/app/models/requests/SigninRequest';
-import { LoginService } from 'src/app/services/auth/login.service';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { MessageComponent } from '../../common/message/message.component';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
+import {SigninRequest} from 'src/app/models/requests/SigninRequest';
+import {LoginService} from 'src/app/services/auth/login.service';
+import {TokenStorageService} from 'src/app/services/token-storage.service';
+import {MessageComponent} from '../../common/message/message.component';
 
 @Component({
   selector: 'app-login',
@@ -23,14 +23,15 @@ export class LoginComponent implements OnInit {
               private loginService: LoginService,
               private tokenStorage: TokenStorageService,
               private router: Router,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
     if (!this.isLoggedIn) {
-    this.model = new SigninRequest();
+      this.model = new SigninRequest();
     } else {
-    this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);
     }
   }
 
@@ -58,8 +59,8 @@ export class LoginComponent implements OnInit {
         // this.dialog.open(MessageComponent, { data: {
         //   message: "Wrong data!"
         // }});
-        
-      } 
+
+      }
     );
   }
 

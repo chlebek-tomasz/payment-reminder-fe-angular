@@ -1,13 +1,14 @@
-import { TokenStorageService } from './token-storage.service';
-import { Injectable } from '@angular/core';
-import { User } from '../models/User';
+import {TokenStorageService} from './token-storage.service';
+import {Injectable} from '@angular/core';
+import {User} from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(public tokenStorageService: TokenStorageService) { }
+  constructor(public tokenStorageService: TokenStorageService) {
+  }
 
   public isAuthenticated(): boolean {
     const token = this.tokenStorageService.getToken();

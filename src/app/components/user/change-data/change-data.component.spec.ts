@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ChangeDataComponent } from './change-data.component';
+import {ChangeDataComponent} from './change-data.component';
 
 describe('ChangeDataComponent', () => {
   let component: ChangeDataComponent;
@@ -8,9 +8,9 @@ describe('ChangeDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChangeDataComponent ]
+      declarations: [ChangeDataComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

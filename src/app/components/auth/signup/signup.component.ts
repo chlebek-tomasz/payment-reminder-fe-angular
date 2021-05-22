@@ -1,11 +1,11 @@
-import { LoginComponent } from './../login/login.component';
-import { SignupService } from './../../../services/auth/signup.service';
-import { SignupRequest } from './../../../models/requests/SignupRequest';
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {LoginComponent} from './../login/login.component';
+import {SignupService} from './../../../services/auth/signup.service';
+import {SignupRequest} from './../../../models/requests/SignupRequest';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {Router} from '@angular/router';
+import {TokenStorageService} from 'src/app/services/token-storage.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +22,8 @@ export class SignupComponent implements OnInit {
               private signupService: SignupService,
               private tokenStorage: TokenStorageService,
               private router: Router,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
@@ -31,7 +32,7 @@ export class SignupComponent implements OnInit {
     } else {
       this.router.navigate(['/dashboard']);
     }
-    
+
   }
 
   onSubmit(signupRequest) {

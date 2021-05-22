@@ -1,14 +1,14 @@
-import { ChangeDataComponent } from './../../user/change-data/change-data.component';
-import { ChangeEmailComponent } from './../../user/change-email/change-email.component';
-import { AddPaymentsComponent } from './../../payments/add-payments/add-payments.component';
-import { TokenStorageService } from './../../../services/token-storage.service';
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../../auth/login/login.component';
-import { SignupComponent } from '../../auth/signup/signup.component';
-import { Router } from '@angular/router';
-import { LocationStrategy } from '@angular/common';
-import { ChangePasswordComponent } from '../../user/change-password/change-password.component';
+import {ChangeDataComponent} from './../../user/change-data/change-data.component';
+import {ChangeEmailComponent} from './../../user/change-email/change-email.component';
+import {AddPaymentsComponent} from './../../payments/add-payments/add-payments.component';
+import {TokenStorageService} from './../../../services/token-storage.service';
+import {Component, OnChanges, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {LoginComponent} from '../../auth/login/login.component';
+import {SignupComponent} from '../../auth/signup/signup.component';
+import {Router} from '@angular/router';
+import {LocationStrategy} from '@angular/common';
+import {ChangePasswordComponent} from '../../user/change-password/change-password.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -23,7 +23,8 @@ export class NavBarComponent implements OnInit {
   constructor(private tokenStorage: TokenStorageService,
               private dialog: MatDialog,
               private router: Router,
-              private url: LocationStrategy) { }
+              private url: LocationStrategy) {
+  }
 
   ngOnInit(): void {
     this.router.events.subscribe(event => {
@@ -31,12 +32,11 @@ export class NavBarComponent implements OnInit {
         this.isLoggedIn = !!this.tokenStorage.getToken();
         if (this.url.path() === '/payments') {
           this.showPlusButton = true;
-        }
-        else this.showPlusButton = false;
+        } else this.showPlusButton = false;
       }
     })
   }
-  
+
   public openLoginForm() {
     this.dialog.open(LoginComponent);
   }

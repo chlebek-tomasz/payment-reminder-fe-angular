@@ -1,18 +1,19 @@
 <mat-card>
-    <mat-card-header>
-        <mat-card-title>Zmień dane</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form (keydown.enter)="onSubmit(model)">
-            <mat-form-field>
-                <input  matInput  placeholder="Imię" [(ngModel)]="model.firstName"  type="text" name="firstName"  required>
-            </mat-form-field><br />
-            <mat-form-field>
-                <input  matInput  placeholder="Nazwisko" [(ngModel)]="model.lastName"  type="text"  name="lastName"  required>
-            </mat-form-field>
-        </form>
-    </mat-card-content>
-    <mat-card-actions>
-        <button  mat-raised-button (click)="onSubmit(model)" color="primary">Wyślij</button>
-    </mat-card-actions>
+  <mat-card-header>
+    <mat-card-title>Zmień dane</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (keydown.enter)="onSubmit(model)">
+      <mat-form-field>
+        <input matInput placeholder="Imię" [(ngModel)]="model.firstName" type="text" name="firstName" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput placeholder="Nazwisko" [(ngModel)]="model.lastName" type="text" name="lastName" required>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="onSubmit(model)" color="primary">Wyślij</button>
+  </mat-card-actions>
 </mat-card>

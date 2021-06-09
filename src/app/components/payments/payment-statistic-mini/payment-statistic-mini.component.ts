@@ -24,6 +24,7 @@ export class PaymentStatisticMiniComponent implements OnInit {
   public getPaymentsStatisticSinceTheBeginningOfMonthToNow() {
     return this.service.getPaymentsStatisticSinceTheBeginningOfMonthToNow()
       .subscribe(data => {
+        console.log(data);
         this.paymentStatistic = new PaymentStatistic().deserialize(data);
         this.payments.emit(this.paymentStatistic.Payments);
       })

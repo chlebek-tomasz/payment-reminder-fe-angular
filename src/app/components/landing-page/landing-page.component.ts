@@ -10,9 +10,17 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  public openLoginForm() {
+    this.dialog.open(LoginComponent);
+  }
+
+  public openRegisterForm() {
+    this.dialog.open(SignupComponent);
   }
 
 }

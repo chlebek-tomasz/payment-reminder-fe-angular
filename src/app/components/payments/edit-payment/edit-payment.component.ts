@@ -35,13 +35,10 @@ export class EditPaymentComponent implements OnInit {
     this.isLoggedIn = !!this.tokenStorage.getToken();
     if (this.isLoggedIn) {
       this.model = new PaymentRequest().deserialize(this.data.element);
-      console.log(this.model);
       this.payment = this.data.element;
       this.paymentCategoryService.getCategories().subscribe(data => {
         this.paymentCategories = data;
       });
-      // this.model.title = this.payment.Title;
-      // this.model.recipientAccountNumber = this.payment.RecipientAccountNumber;
     } else {
       this.router.navigate(['/']);
     }
